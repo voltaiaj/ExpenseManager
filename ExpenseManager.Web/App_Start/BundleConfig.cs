@@ -21,6 +21,18 @@ namespace ExpenseManager.Web
                 "~/Scripts/knockout-{version}.js",
                 "~/Scripts/knockout.validation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angularJS")
+                            .Include("~/JS/lib/bower_components/angular/angular.js")
+                            .Include("~/JS/lib/bower_components/angular-ui-router/release/angular-ui-router.js")
+                );
+
+            bundles.Add(new ScriptBundle("~/bundles/ExpenseManager/js")
+                            .Include("~/App/em.module.js")
+                            .Include("~/App/home/home.module.js")
+                            .Include("~/App/home/homeIndexController.js")
+                            .Include("~/App/menuController.js")
+                );
+
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/sammy-{version}.js",
                 "~/Scripts/app/common.js",

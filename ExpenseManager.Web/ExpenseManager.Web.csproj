@@ -258,6 +258,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\em.module.js" />
+    <Content Include="App\home\home.module.js" />
+    <Content Include="App\home\homeIndex.html" />
+    <Content Include="App\home\homeIndexController.js" />
+    <Content Include="App\menuController.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap.css" />
@@ -266,6 +271,23 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\common.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\resolve.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\state.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\stateFilters.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\templateFactory.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\urlRouter.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\view.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\viewDirective.js" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\src\viewScroll.js" />
+    <Content Include="JS\lib\bower_components\angular\angular-csp.css" />
+    <Content Include="JS\lib\bower_components\angular\angular.js" />
+    <Content Include="JS\lib\bower_components\angular\angular.min.js" />
+    <Content Include="JS\lib\bower_components\angular\index.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -292,6 +314,18 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="JS\lib\bower_components\angular\.bower.json" />
+    <Content Include="JS\lib\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="JS\lib\bower_components\angular\angular.min.js.map" />
+    <Content Include="JS\lib\bower_components\angular\bower.json" />
+    <Content Include="JS\lib\bower_components\angular\package.json" />
+    <Content Include="JS\lib\bower_components\angular\README.md" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\.bower.json" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\bower.json" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\CHANGELOG.md" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\LICENSE" />
+    <Content Include="JS\lib\bower_components\angular-ui-router\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -349,7 +383,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
