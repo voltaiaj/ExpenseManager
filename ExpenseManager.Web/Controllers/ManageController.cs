@@ -10,7 +10,7 @@ using ExpenseManager.Web.Models;
 
 namespace ExpenseManager.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
