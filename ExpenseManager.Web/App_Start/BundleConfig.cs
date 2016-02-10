@@ -31,6 +31,10 @@ namespace ExpenseManager.Web
                             .Include("~/App/home/home.module.js")
                             .Include("~/App/home/homeIndexController.js")
                             .Include("~/App/menuController.js")
+                            .Include("~/App/expenseSummary/expenseSummary.module.js")
+                            .Include("~/App/expenseSummary/expenseSummaryController.js")
+                            .Include("~/App/randomness/randomness.module.js")
+                            .Include("~/App/randomness/randomnessController.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
@@ -50,9 +54,11 @@ namespace ExpenseManager.Web
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                 "~/Content/bootstrap.css",
-                 "~/Content/Site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                            .Include("~/Content/bootstrap.css")
+                            .Include("~/Content/Site.css")
+                            .Include("~/Content/app.css")
+                );
         }
     }
 }

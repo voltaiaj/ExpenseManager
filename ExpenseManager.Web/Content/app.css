@@ -1,0 +1,31 @@
+﻿.redbox {
+    width: 400px;
+    height: 200px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding-top: 50px;    
+}
+
+.bluebox {
+    width: 400px;
+    height: 200px;
+    background-color: blue;
+    color: white;    
+}
+
+.greenbox {
+    width: 400px;
+    height: 200px;
+    background-color: green;
+    color: white;
+}
+
+.blackbox {
+    width: 400px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 50px; 
+}

@@ -259,12 +259,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\em.module.js" />
+    <Content Include="App\expenseSummary\expenseSummary.html" />
+    <Content Include="App\expenseSummary\expenseSummaryController.js" />
+    <Content Include="App\expenseSummary\expenseSummary.module.js" />
     <Content Include="App\home\home.module.js" />
     <Content Include="App\home\homeIndex.html" />
     <Content Include="App\home\homeIndexController.js" />
     <Content Include="App\menuController.js" />
+    <Content Include="App\randomness\randomness.html" />
+    <Content Include="App\randomness\randomness.module.js" />
+    <Content Include="App\randomness\randomnessController.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />

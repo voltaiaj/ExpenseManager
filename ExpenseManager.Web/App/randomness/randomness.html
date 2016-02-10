@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<h1>{{vm.title}}</h1>
+<h1>{{vm.helloWorld}}</h1>  <!--helloWorld property is undefined in the current scope-->
+<table>
+    <thead>
+    <tr>
+        <th><h1>Expression</h1></th>
+        <th><h1>Is valid?</h1></th>
+        <th><h1>Value</h1></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="expression in vm.expressions">
+        <td>
+            <div class="redbox">
+                <h1>{{expression.view}}</h1>
+            </div>
+        </td>
+        <td>
+            <div class="blackbox">
+                <h1>{{expression.isValid}}</h1>
+            </div>
+        </td>
+        <td>
+            <div class="blackbox">
+                <h1>{{expression.value}}</h1>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
