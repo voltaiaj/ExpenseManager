@@ -6,21 +6,25 @@
 </head>
 <body>
     <h1>{{vm.title}}</h1>
-    <table class="table" ng-show="false">
-        <tbody>
-            <tr ng-repeat="item in vm.items|oddFilter">
-                <td><div class="{{vm.class}}">{{item}}</div></td>
-                <td><div class="bluebox">{{item}}</div></td>
-                <td><div class="greenbox">{{item}}</div></td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table">
-        <tbody>
-            <tr ng-repeat="row in vm.matrix">
-                <td ng-repeat="item in row"><div class="{{vm.class}}">{{item}}</div></td>
-            </tr>
-        </tbody>
-    </table>
+    <div ng-hide="">
+        <!--<table class="table">
+            <tbody>
+                <tr ng-repeat="item in vm.items|oddFilter">
+                    <td><div class="{{vm.class}}">{{item}}</div></td>
+                    <td><div class="bluebox">{{item + 2}}</div></td>
+                    <td><div class="greenbox">{{item + 4}}</div></td>
+                </tr>
+            </tbody>
+        </table>-->    
+    </div>
+    <div>
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="row in vm.matrix">
+                    <td ng-repeat="item in row|matrixFilter"><div class="{{item.color}}">{{item.value}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
