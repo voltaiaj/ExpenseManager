@@ -33,8 +33,10 @@ namespace ExpenseManager.Web
                             .Include("~/App/menuController.js")
                             .Include("~/App/expenseSummary/expenseSummary.module.js")
                             .Include("~/App/expenseSummary/expenseSummaryController.js")
+                            .Include("~/App/expenseSummary/expenseSummaryFilters.js")
                             .Include("~/App/randomness/randomness.module.js")
                             .Include("~/App/randomness/randomnessController.js")
+                            
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(

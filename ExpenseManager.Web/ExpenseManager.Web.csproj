@@ -262,6 +262,7 @@
     <Content Include="App\expenseSummary\expenseSummary.html" />
     <Content Include="App\expenseSummary\expenseSummaryController.js" />
     <Content Include="App\expenseSummary\expenseSummary.module.js" />
+    <Content Include="App\expenseSummary\expenseSummaryFilters.js" />
     <Content Include="App\home\home.module.js" />
     <Content Include="App\home\homeIndex.html" />
     <Content Include="App\home\homeIndexController.js" />
@@ -318,9 +319,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="JS\lib\bower_components\angular\.bower.json" />
     <Content Include="JS\lib\bower_components\angular\angular.min.js.gzip" />
     <Content Include="JS\lib\bower_components\angular\angular.min.js.map" />

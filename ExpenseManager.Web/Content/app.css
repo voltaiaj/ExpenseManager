@@ -4,7 +4,8 @@
     background-color: red;
     color: white;
     text-align: center;
-    padding-top: 50px;    
+    padding-top: 50px;   
+    font-size: 6em;     
 }
 
 .bluebox {
@@ -12,6 +13,9 @@
     height: 200px;
     background-color: blue;
     color: white;    
+    text-align: center;
+    padding-top: 50px;
+    font-size: 6em;    
 }
 
 .greenbox {
@@ -19,6 +23,9 @@
     height: 200px;
     background-color: green;
     color: white;
+    text-align: center;
+    padding-top: 50px;    
+    font-size: 6em;    
 }
 
 .blackbox {
