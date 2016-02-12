@@ -31,11 +31,11 @@ namespace ExpenseManager.Web
                             .Include("~/App/home/home.module.js")
                             .Include("~/App/home/homeIndexController.js")
                             .Include("~/App/menuController.js")
-                            .Include("~/App/expenseSummary/expenseSummary.module.js")
-                            .Include("~/App/expenseSummary/expenseSummaryController.js")
-                            .Include("~/App/expenseSummary/expenseSummaryFilters.js")
-                            .Include("~/App/randomness/randomness.module.js")
-                            .Include("~/App/randomness/randomnessController.js")
+                            .Include("~/App/filters/filters.module.js")
+                            .Include("~/App/filters/filtersController.js")
+                            .Include("~/App/filters/filtersFilters.js")
+                            .Include("~/App/expressions/expressions.module.js")
+                            .Include("~/App/expressions/expressionsController.js")
                             
                 );
 

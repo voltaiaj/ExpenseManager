@@ -259,17 +259,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\em.module.js" />
-    <Content Include="App\expenseSummary\expenseSummary.html" />
-    <Content Include="App\expenseSummary\expenseSummaryController.js" />
-    <Content Include="App\expenseSummary\expenseSummary.module.js" />
-    <Content Include="App\expenseSummary\expenseSummaryFilters.js" />
+    <Content Include="App\expressions\examples.html" />
+    <Content Include="App\filters\filters.html" />
+    <Content Include="App\filters\filtersController.js" />
+    <Content Include="App\filters\filters.module.js" />
+    <Content Include="App\filters\filtersFilters.js" />
     <Content Include="App\home\home.module.js" />
     <Content Include="App\home\homeIndex.html" />
     <Content Include="App\home\homeIndexController.js" />
     <Content Include="App\menuController.js" />
-    <Content Include="App\randomness\randomness.html" />
-    <Content Include="App\randomness\randomness.module.js" />
-    <Content Include="App\randomness\randomnessController.js" />
+    <Content Include="App\expressions\expressions.html" />
+    <Content Include="App\expressions\expressions.module.js" />
+    <Content Include="App\expressions\expressionsController.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\app.css" />
@@ -388,6 +389,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\expenseSummary\" />
+    <Folder Include="App\randomness\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

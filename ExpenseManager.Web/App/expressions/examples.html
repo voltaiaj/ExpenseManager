@@ -1,0 +1,28 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th><h1>Expression</h1></th>
+            <th><h1>Is valid?</h1></th>
+            <th><h1>Value</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="expression in vm.expressions">
+            <td>
+                <div class="redbox">
+                    <h1>{{expression.view}}</h1>
+                </div>
+            </td>
+            <td ng-show="true">
+                <div class="blackbox">
+                    <h1>{{expression.isValid}}</h1>
+                </div>
+            </td>
+            <td ng-show="true">
+                <div class="blackbox">
+                    <h1>{{expression.value}}</h1>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

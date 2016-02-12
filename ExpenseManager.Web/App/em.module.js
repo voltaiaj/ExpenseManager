@@ -4,8 +4,8 @@
     angular.module('em', [
             'ui.router',
             'em.home',
-            'em.expenseSummary',
-            'em.randomness'
+            'em.filters',
+            'em.expressions'
         ])
         .config([
             '$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -18,17 +18,21 @@
                     controller: 'homeIndexController as vm'                    
                 });
 
-                $stateProvider.state('expenseSummary', {
-                    url: '/expenseSummary',
-                    templateUrl: '/App/expenseSummary/expenseSummary.html',
-                    controller: 'expenseSummaryController as vm'
+                $stateProvider.state('filters', {
+                    url: '/filters',
+                    templateUrl: '/App/filters/filters.html',
+                    controller: 'filtersController as vm'
                 });
 
-                $stateProvider.state('randomness', {
-                    url: '/randomness',
-                    templateUrl: '/App/randomness/randomness.html',
-                    controller: 'randomnessController as vm'
-            });
+                $stateProvider.state('expressions', {
+                    abstract: false,
+                    url: '/expressions',
+                    templateUrl: '/App/expressions/expressions.html',
+                    controller: 'expressionsController as vm'
+                }).state('expressions.examples', {url: '/examples', templateUrl: '/App/expressions/examples.html'});
+
+                $stateProvider.state('#panel-919247', { url: '#panel-919247' });
+                $stateProvider.state('#panel-776251', { url: '#panel-776251' });
 
                 $locationProvider.html5Mode(false);
             }

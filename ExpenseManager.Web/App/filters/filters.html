@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>{{vm.title}}</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>{{vm.title}}</h1>
+    <div>
+        <!--<table class="table">
+            <tbody>
+                <tr ng-repeat="item in vm.items|oddFilter">
+                    <td><div class="{{vm.class}}">{{item}}</div></td>
+                    <td><div class="bluebox">{{item + 2}}</div></td>
+                    <td><div class="greenbox">{{item + 4}}</div></td>
+                </tr>
+            </tbody>
+        </table>-->    
+    </div>
+    <div>
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="row in vm.matrix">
+                    <td ng-repeat="item in row|matrixFilter">
+                        <div class="{{item.color}}">{{item.value}}</div></td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
