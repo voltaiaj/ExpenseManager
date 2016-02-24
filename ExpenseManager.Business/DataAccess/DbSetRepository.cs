@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -67,6 +68,16 @@ namespace ExpenseManager.Business.DataAccess
         public T Add(T item)
         {
             return this.DbSet.Add(item);
+        }
+
+        public IEnumerable<T> AddRange(IEnumerable<T> entities)
+        {
+            for (int index = 0; index < entities.Count(); index++)
+            {
+                this.DbSet.Add(entities.ElementAt(index));
+            }
+
+            return entities;
         }
 
         public T Remove(T item)

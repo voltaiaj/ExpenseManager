@@ -1,11 +1,13 @@
 ﻿(function() {
     'use strict';
 
-    angular.module('em', [
+    angular.module('em', [            
             'ui.router',
             'em.home',
             'em.filters',
-            'em.expressions'
+            'em.expressions',
+            'em.expenseSummary',
+            'utils'
         ])
         .config([
             '$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -14,25 +16,36 @@
 
                 $stateProvider.state('homeIndex', {
                     url: '/',
-                    templateUrl: '/App/home/homeIndex.html',
+                    templateUrl: '/app/home/homeIndex.html',
                     controller: 'homeIndexController as vm'                    
                 });
 
+                $stateProvider.state('expenseSummary', {
+                    url: '/expenseSummary',
+                    templateUrl: '/app/expenseSummary/expenseSummary.html',
+                    controller: 'expenseSummaryController as vm'
+                });
+
+                //................................................
+                //____________Tech Discussion Learning____________                
                 $stateProvider.state('filters', {
                     url: '/filters',
-                    templateUrl: '/App/filters/filters.html',
+                    templateUrl: '/app/filters/filters.html',
                     controller: 'filtersController as vm'
                 });
 
-                $stateProvider.state('expressions', {
-                    abstract: false,
+                $stateProvider.state('expressions', {                    
                     url: '/expressions',
-                    templateUrl: '/App/expressions/expressions.html',
+                    templateUrl: '/app/expressions/expressions.html',
                     controller: 'expressionsController as vm'
-                }).state('expressions.examples', {url: '/examples', templateUrl: '/App/expressions/examples.html'});
+                });
+
+                $stateProvider.state('expressions.examples', { url: '/examples', templateUrl: '/App/expressions/examples.html' });
 
                 $stateProvider.state('#panel-919247', { url: '#panel-919247' });
-                $stateProvider.state('#panel-776251', { url: '#panel-776251' });
+                $stateProvider.state('#panel-776251', { url: '#panel-776251' });                
+                //________________________________________________
+                //................................................
 
                 $locationProvider.html5Mode(false);
             }

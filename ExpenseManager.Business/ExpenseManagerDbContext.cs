@@ -17,6 +17,7 @@ namespace ExpenseManager.Business
         public ExpenseManagerDbContext()
             : base("name=ExpenseManager")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         private const string AppSchemaName = "ExpenseManager";

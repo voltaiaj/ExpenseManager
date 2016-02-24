@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -37,6 +38,11 @@ namespace ExpenseManager.Business.DataAccess
         public T Add(T entity)
         {
             return this.Repository.Add(entity);
+        }
+
+        public IEnumerable<T> AddRange(IEnumerable<T> entities)
+        {
+            return this.Repository.AddRange(entities);
         }
 
         public T Remove(T entity)

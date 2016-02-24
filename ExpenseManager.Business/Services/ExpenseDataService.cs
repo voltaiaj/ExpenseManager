@@ -13,16 +13,19 @@ namespace ExpenseManager.Business.Services
         IEnumerable<Expense> GetExpensesByMonthAndYear(DateTime monthAndYear);
         IEnumerable<Expense> GetExpensesByYear(DateTime year);
         Expense Add(Expense expense);
+        IEnumerable<Expense> AddRange(IEnumerable<Expense> expenses);
         Expense Remove(Expense expense);
         int SaveChanges();
         bool Exists(Expression<Func<Expense, bool>> expression);
+        IEnumerable<Expense> GetAllExpenses();
     }
 
-    public class ExpenseDataService : DataServiceBase<Expense> , IExpenseDataService
+    public class ExpenseDataService : DataServiceBase<Expense>, IExpenseDataService
     {
         public ExpenseDataService(IExpenseManagerDbContext context)
-            :base(new ExpenseManagerUnitOfWorkAdapter(context), context.Expenses)
+            : base(new ExpenseManagerUnitOfWorkAdapter(context), context.Expenses)
         {
+            this.Context = context;
         }
 
         private IExpenseManagerDbContext Context { get; set; }
@@ -42,5 +45,9 @@ namespace ExpenseManager.Business.Services
             return Context.Expenses.Where(x => x.Date.Year == year.Year);
         }
 
+        public IEnumerable<Expense> GetAllExpenses()
+        {
+            return this.Find(x => true);
+        }
     }
 }

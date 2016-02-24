@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace ExpenseManager.Web
 {
@@ -27,17 +24,26 @@ namespace ExpenseManager.Web
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/ExpenseManager/js")
-                            .Include("~/App/em.module.js")
-                            .Include("~/App/home/home.module.js")
-                            .Include("~/App/home/homeIndexController.js")
-                            .Include("~/App/menuController.js")
-                            .Include("~/App/filters/filters.module.js")
-                            .Include("~/App/filters/filtersController.js")
-                            .Include("~/App/filters/filtersFilters.js")
-                            .Include("~/App/expressions/expressions.module.js")
-                            .Include("~/App/expressions/expressionsController.js")
-                            
+                            .Include("~/app/em.module.js")
+                            .Include("~/app/home/home.module.js")
+                            .Include("~/app/home/homeIndexController.js")
+                            .Include("~/app/menuController.js")
+                            .Include("~/app/filters/filters.module.js")
+                            .Include("~/app/filters/filtersController.js")
+                            .Include("~/app/filters/filtersFilters.js")
+                            .Include("~/app/expressions/expressions.module.js")
+                            .Include("~/app/expressions/expressionsController.js")
+                            .Include("~/app/expenseSummary/expenseSummary.module.js")
+                            .Include("~/app/expenseSummary/expenseSummaryController.js")
+                            .Include("~/app/em.constants.js")
+                            .Include("~/app/em.services.js")
+                            .Include("~/app/utils/utils.module.js")
+                            .Include("~/app/utils/urlHelper.service.js")
+                            .Include("~/app/utils/dataTools.service.js")
+                            .Include("~/app/utils/dataServiceHelper.service.js")
                 );
+
+
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/sammy-{version}.js",

@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
 using ExpenseManager.Business.Services;
 using ExpenseManager.Models;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExpenseManager.Business.BusinessLogic
 {
@@ -15,7 +12,7 @@ namespace ExpenseManager.Business.BusinessLogic
         void Add(Expense expense);
         void Update(Expense expense);
         void Remove(Expense expense);
-        bool DoesExpenseAlreadyExists(Expense expense);
+        bool DoesExpenseAlreadyExists(Expense expense);        
     }
 
     public class ExpenseBusinessLogic: IExpenseBusinessLogic
@@ -29,6 +26,14 @@ namespace ExpenseManager.Business.BusinessLogic
         public void Add(Expense expense)
         {
             ExpenseDataService.Add(expense);
+            ExpenseDataService.SaveChanges();
+        }
+
+        public void AddRange(IEnumerable<Expense> expenses)
+        {
+
+            this.ExpenseDataService.AddRange(expenses);
+            this.ExpenseDataService.SaveChanges();
         }
 
         public void Update(Expense model)
@@ -51,7 +56,7 @@ namespace ExpenseManager.Business.BusinessLogic
         public IEnumerable<Expense> Classifier(IEnumerable<string[]> expenses)
         {
             var result = new List<Expense>();
-            var trainingSets = TrainingSetDataService.GetAllTrainingSets();
+            var trainingSets = TrainingSetDataService.GetAllTrainingSets().ToList();
             foreach (var entry in expenses)
             {
                 var date = String.Concat(entry[0].Trim(), " 00:00:00:AM");
@@ -63,10 +68,11 @@ namespace ExpenseManager.Business.BusinessLogic
                 {
                     Date = DateTime.ParseExact(date, "MM/dd/yyyy hh:mm:ss:tt", CultureInfo.InvariantCulture),
                     Description = entry[1],
-                    Value = Double.Parse(entry[2].TrimStart('$').Trim())
+                    Value = Decimal.Parse(entry[2].TrimStart('$').Trim())
                 };
 
-                var trainingSet = trainingSets.FirstOrDefault(x => _function(x, expense));
+                
+                var trainingSet = (trainingSets.Any()) ? trainingSets.FirstOrDefault(x => _function(x, expense)) : null;
 
                 expense.CategoryId = trainingSet == null ? 0 : trainingSet.CategoryId;
                 expense.TierId = _tierFinder(expense.CategoryId);
