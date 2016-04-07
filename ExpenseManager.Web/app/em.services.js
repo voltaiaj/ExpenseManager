@@ -7,14 +7,18 @@
 
     function expenseManagerDataService(dataServiceHelper, expenseManagerUrls) {
         var service = {
-            getCurrentMonthExpenses: getCurrentMonthExpenses
+            getCurrentMonthExpenses: getCurrentMonthExpenses,
+            getCurrentMonthSummary: getCurrentMonthSummary
         };
 
         return service;
 
         function getCurrentMonthExpenses() {
-            return dataServiceHelper.get(expenseManagerUrls.getCurrentMonthExpenses);
-            
+            return dataServiceHelper.get(expenseManagerUrls.getCurrentMonthExpenses);            
+        }
+
+        function getCurrentMonthSummary() {
+            return dataServiceHelper.get(expenseManagerUrls.getCurrentMonthSummary);
         }
     }
     

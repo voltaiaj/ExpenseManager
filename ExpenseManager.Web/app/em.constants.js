@@ -3,6 +3,7 @@
     angular.module('em')
         .constant('expenseManagerUrls', {
             
-            getCurrentMonthExpenses: 'api/Expense/GetCurrentMonthExpenses'
+            getCurrentMonthExpenses: 'api/Expense/GetCurrentMonthExpenses',
+            getCurrentMonthSummary: 'api/Expense/GetCurrentMonthSummary'
         });
 })();

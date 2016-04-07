@@ -11,7 +11,8 @@ namespace ExpenseManager.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var path = "C:\\Users\\Alexander\\Desktop\\Projects\\ExpenseProject.xlsx";
+            //var path = "C:\\Users\\Alexander\\Desktop\\Projects\\ExpenseProject.xlsx";
+            var path = "F:\\Project\\ExpenseProject.xlsx";
             var readResults = ExpenseReader.ReadExpenses(path);                
             var businessLogic = new ExpenseBusinessLogic(new ExpenseDataService(new ExpenseManagerDbContext()), new TrainingSetDataService(new ExpenseManagerDbContext()));
             var results = businessLogic.Classifier(readResults);

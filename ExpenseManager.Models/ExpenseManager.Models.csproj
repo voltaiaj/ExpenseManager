@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="ExpenseSummaryDTO.cs" />
     <Compile Include="Tier.cs" />
     <Compile Include="Expense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

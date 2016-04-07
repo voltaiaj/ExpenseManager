@@ -12,7 +12,8 @@ namespace ExpenseManager.Business.BusinessLogic
         void Add(Expense expense);
         void Update(Expense expense);
         void Remove(Expense expense);
-        bool DoesExpenseAlreadyExists(Expense expense);        
+        bool DoesExpenseAlreadyExists(Expense expense);
+        ExpenseSummaryDTO GetExpenseSummaryFromExpenses(IEnumerable<Expense> expenses);
     }
 
     public class ExpenseBusinessLogic: IExpenseBusinessLogic
@@ -110,7 +111,52 @@ namespace ExpenseManager.Business.BusinessLogic
             return (int) Tiers.UniqueExpenses;            
         };
 
+        /// <summary>
+        /// GetExpenseSummaryFromExpenses takes in  a collection of expenses
+        /// and returns an ExpenseSummaryDTO of the expenses.
+        /// </summary>
+        /// <param name="expenses"></param>
+        /// <returns></returns>
+        public ExpenseSummaryDTO GetExpenseSummaryFromExpenses(IEnumerable<Expense> expenses)
+        {
+            var listOfCategoryValues = new List<decimal> {}; 
+            var listOfCategoryLabels = new List<string>();
+            var listOfTierLabels = new List<string>();
+            var listOfTierValues = new List<decimal>();
+
+            var categories = expenses.GroupBy<Expense, int>(x => x.CategoryId).Select( x => x.Key).ToList();
+            var tiers = expenses.GroupBy<Expense, int>(x => x.TierId).Select(x => x.Key).ToList();
+
+            var numberOfCategories = categories.Count();
+            var numberOfTiers = tiers.Count();
+
+            //start a loop based on number of catgegories
+            for (int i = 0; i < numberOfCategories; i++)
+            {
+                var categorySpecificExpenses = expenses.Where(x => x.CategoryId == categories.ElementAt(i));
+                listOfCategoryValues.Add(categorySpecificExpenses.Sum(x => x.Value));
+                listOfCategoryLabels.Add(Enum.GetName(typeof (Categories), categories.ElementAt(i)));
+            }
+
+            //start a loop based on the number of tiers
+            for (int i = 0; i < numberOfTiers; i++)
+            {
+                var tierSpecificExpenses = expenses.Where(x => x.TierId == tiers.ElementAt(i));
+                listOfTierValues.Add(tierSpecificExpenses.Sum(x=> x.Value));
+                listOfTierLabels.Add(Enum.GetName(typeof(Tiers), tiers.ElementAt(i)));
+            }
+
+            return new ExpenseSummaryDTO
+                    {
+                        Labels_Categories = listOfCategoryLabels,
+                        Data_Categories = listOfCategoryValues,
+                        Labels_Tiers = listOfTierLabels,
+                        Data_Tiers = listOfTierValues,
+                        Expenses = expenses
+                    };
+        }        
+
         private IExpenseDataService ExpenseDataService { get; set; }
-        private ITrainingSetDataService TrainingSetDataService { get; set; }
+        private ITrainingSetDataService TrainingSetDataService { get; set; }       
     }
 }

@@ -21,6 +21,9 @@ namespace ExpenseManager.Web
             bundles.Add(new ScriptBundle("~/bundles/angularJS")
                             .Include("~/JS/lib/bower_components/angular/angular.js")
                             .Include("~/JS/lib/bower_components/angular-ui-router/release/angular-ui-router.js")
+                            .Include("~/JS/lib/bower_components/Chart.js/Chart.js")
+                            .Include("~/JS/lib/bower_components/angular-chart.js/angular-chart.js")
+                            .Include("~/JS/lib/bower_components/d3/d3.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/ExpenseManager/js")
@@ -66,6 +69,7 @@ namespace ExpenseManager.Web
                             .Include("~/Content/bootstrap.css")
                             .Include("~/Content/Site.css")
                             .Include("~/Content/app.css")
+                            .Include("~/JS/lib/bower_components/angular-chart.js/dist/angular-chart.css")
                 );
         }
     }

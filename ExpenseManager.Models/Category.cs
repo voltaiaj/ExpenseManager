@@ -24,7 +24,7 @@ namespace ExpenseManager.Models
         Entertainment = 16,
         Services = 17,
         AnnualRenewals = 18
-    }
+    }   
 
     public class Category
     {

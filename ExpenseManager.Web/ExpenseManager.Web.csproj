@@ -265,6 +265,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\ExpenseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JasmineController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -306,10 +307,22 @@
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jasmine\jasmine.css" />
+    <Content Include="Content\jasmine\jasmine_favicon.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\angular-chart.js" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.css" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.js" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.min.css" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.min.js" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\gulpfile.js" />
+    <Content Include="JS\lib\bower_components\angular-mocks\angular-mocks.js" />
+    <Content Include="JS\lib\bower_components\angular-mocks\ngAnimateMock.js" />
+    <Content Include="JS\lib\bower_components\angular-mocks\ngMock.js" />
+    <Content Include="JS\lib\bower_components\angular-mocks\ngMockE2E.js" />
     <Content Include="JS\lib\bower_components\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="JS\lib\bower_components\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="JS\lib\bower_components\angular-ui-router\src\common.js" />
@@ -327,6 +340,27 @@
     <Content Include="JS\lib\bower_components\angular\angular.js" />
     <Content Include="JS\lib\bower_components\angular\angular.min.js" />
     <Content Include="JS\lib\bower_components\angular\index.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\.gitignore" />
+    <Content Include="JS\lib\bower_components\Chart.js\Chart.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\Chart.min.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\gulpfile.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\bar.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\doughnut.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\line-customTooltips.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\line.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\pie-customTooltips.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\pie.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\polar-area.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\samples\radar.html" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.Bar.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.Core.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.Doughnut.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.Line.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.PolarArea.js" />
+    <Content Include="JS\lib\bower_components\Chart.js\src\Chart.Radar.js" />
+    <Content Include="JS\lib\bower_components\d3\d3.js" />
+    <Content Include="JS\lib\bower_components\d3\d3.min.js" />
+    <Content Include="JS\Tests\controllers\expenseSummaryController.spec.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -363,7 +397,51 @@
     <Content Include="JS\lib\bower_components\angular-ui-router\LICENSE" />
     <Content Include="JS\lib\bower_components\angular-ui-router\README.md" />
     <Content Include="app\expenseSummary\expenseSummary.module.js" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\.bower.json" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\angular-chart.less" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\bower.json" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\CONTRIBUTING.md" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.js.tar.gz" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.min.css.map" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\dist\angular-chart.min.js.map" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\ISSUE_TEMPLATE.md" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\LICENSE" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\package.json" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="JS\lib\bower_components\angular-chart.js\README.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\.bower.json" />
+    <Content Include="JS\lib\bower_components\Chart.js\.travis.yml" />
+    <Content Include="JS\lib\bower_components\Chart.js\bower.json" />
+    <Content Include="JS\lib\bower_components\Chart.js\CONTRIBUTING.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\00-Getting-Started.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\01-Line-Chart.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\02-Bar-Chart.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\03-Radar-Chart.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\04-Polar-Area-Chart.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\05-Pie-Doughnut-Chart.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\06-Advanced.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\docs\07-Notes.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\LICENSE.md" />
+    <Content Include="JS\lib\bower_components\Chart.js\package.json" />
+    <Content Include="JS\lib\bower_components\Chart.js\README.md" />
+    <Content Include="JS\lib\bower_components\angular-mocks\.bower.json" />
+    <Content Include="JS\lib\bower_components\angular-mocks\bower.json" />
+    <Content Include="JS\lib\bower_components\angular-mocks\package.json" />
+    <Content Include="JS\lib\bower_components\angular-mocks\README.md" />
+    <Content Include="JS\lib\bower_components\d3\.bower.json" />
+    <Content Include="JS\lib\bower_components\d3\bower.json" />
+    <Content Include="JS\lib\bower_components\d3\LICENSE" />
+    <Content Include="JS\lib\bower_components\d3\README.md" />
+    <Content Include="JS\lib\flare.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jasmine-samples\Player.js" />
+    <Content Include="Scripts\jasmine-samples\PlayerSpec.js" />
+    <Content Include="Scripts\jasmine-samples\Song.js" />
+    <Content Include="Scripts\jasmine-samples\SpecHelper.js" />
+    <Content Include="Scripts\jasmine\boot.js" />
+    <Content Include="Scripts\jasmine\console.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\knockout-2.3.0.debug.js" />
@@ -375,6 +453,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\sinon-1.9.1.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
@@ -409,6 +488,7 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="wallaby.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -418,10 +498,12 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Jasmine\SpecRunner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\randomness\" />
     <Folder Include="App_Data\" />
+    <Folder Include="JS\Tests\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -7,7 +7,8 @@
             'em.filters',
             'em.expressions',
             'em.expenseSummary',
-            'utils'
+            'utils',
+            'chart.js'
         ])
         .config([
             '$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -48,6 +49,11 @@
                 //................................................
 
                 $locationProvider.html5Mode(false);
+            }
+        ])
+        .config([
+            'ChartJsProvider', function(ChartJsProvider) {
+                ChartJsProvider.setOptions({ colors: ['#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
             }
         ])
         .run([
