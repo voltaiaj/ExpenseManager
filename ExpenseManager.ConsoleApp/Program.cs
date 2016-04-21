@@ -4,6 +4,7 @@ using System.Linq;
 using ExpenseManager.Business;
 using ExpenseManager.Business.BusinessLogic;
 using ExpenseManager.Business.Services;
+using ExpenseManager.Models;
 
 namespace ExpenseManager.ConsoleApp
 {

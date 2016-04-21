@@ -25,24 +25,24 @@ namespace ExpenseManager.Business.Services
         public ExpenseDataService(IExpenseManagerDbContext context)
             : base(new ExpenseManagerUnitOfWorkAdapter(context), context.Expenses)
         {
-            this.Context = context;
+            this._Context = context;
         }
 
-        private IExpenseManagerDbContext Context { get; set; }
+        private IExpenseManagerDbContext _Context { get; set; }
 
         public Expense GetExpenseById(int id)
         {
-            return Context.Expenses.SingleOrDefault(x => x.Id == id);
+            return _Context.Expenses.SingleOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<Expense> GetExpensesByMonthAndYear(DateTime monthAndYear)
         {
-            return Context.Expenses.Where(x => x.Date.Month == monthAndYear.Month && x.Date.Year == monthAndYear.Year);
+            return _Context.Expenses.Where(x => x.Date.Month == monthAndYear.Month && x.Date.Year == monthAndYear.Year);
         }
 
         public IEnumerable<Expense> GetExpensesByYear(DateTime year)
         {
-            return Context.Expenses.Where(x => x.Date.Year == year.Year);
+            return _Context.Expenses.Where(x => x.Date.Year == year.Year);
         }
 
         public IEnumerable<Expense> GetAllExpenses()

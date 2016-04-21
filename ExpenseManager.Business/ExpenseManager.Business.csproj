@@ -58,7 +58,6 @@
     <Compile Include="DataAccess\DataServiceBase.cs" />
     <Compile Include="DataAccess\DbSetRepository.cs" />
     <Compile Include="DataAccess\ExpenseManagerUnitOfWorkAdapter.cs" />
-    <Compile Include="ExpenseManagerDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExpenseDataService.cs" />

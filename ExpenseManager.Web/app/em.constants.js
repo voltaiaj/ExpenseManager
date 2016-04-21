@@ -1,9 +1,9 @@
 ﻿(function() {
     'use strict';
     angular.module('em')
-        .constant('expenseManagerUrls', {
-            
+        .constant('expenseManagerUrls', {            
             getCurrentMonthExpenses: 'api/Expense/GetCurrentMonthExpenses',
-            getCurrentMonthSummary: 'api/Expense/GetCurrentMonthSummary'
+            getCurrentMonthSummary: 'api/Expense/GetCurrentMonthSummary',
+            updateExpense: 'api/Expense/UpdateExpense'
         });
 })();

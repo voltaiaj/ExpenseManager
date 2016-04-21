@@ -22,6 +22,7 @@ namespace ExpenseManager.Models
         public int TierId { get; set; }
         public virtual Tier SelectedTier { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryName { get { return ((Categories) this.CategoryId).ToString(); } }
         public virtual Category SelectedCategory { get; set; }
     }
 }

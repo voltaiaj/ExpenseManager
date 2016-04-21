@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManager.Models", "ExpenseManager.Models\ExpenseManager.Models.csproj", "{6AE3B4D6-30A8-4236-A090-A79FDB391478}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManager.ConsoleApp", "ExpenseManager.ConsoleApp\ExpenseManager.ConsoleApp.csproj", "{323F4DE0-A08F-40E6-8314-EAF8E750BACC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManager.Web", "ExpenseManager.Web\ExpenseManager.Web.csproj", "{A5B18A7D-3662-4CFA-B8E6-EECE82BBD9A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseManager.Business.Tests", "ExpenseManager.Business.Tests\ExpenseManager.Business.Tests.csproj", "{2C826F79-DF9B-4197-B717-B83E234F9D14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +42,10 @@ Global
 		{A5B18A7D-3662-4CFA-B8E6-EECE82BBD9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5B18A7D-3662-4CFA-B8E6-EECE82BBD9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5B18A7D-3662-4CFA-B8E6-EECE82BBD9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C826F79-DF9B-4197-B717-B83E234F9D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C826F79-DF9B-4197-B717-B83E234F9D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C826F79-DF9B-4197-B717-B83E234F9D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C826F79-DF9B-4197-B717-B83E234F9D14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

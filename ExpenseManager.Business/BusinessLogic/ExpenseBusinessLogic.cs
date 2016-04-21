@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using ExpenseManager.Business.Services;
 using ExpenseManager.Models;
 
@@ -10,9 +11,11 @@ namespace ExpenseManager.Business.BusinessLogic
     public interface IExpenseBusinessLogic
     {
         void Add(Expense expense);
+        void AddRange(IEnumerable<Expense> expenses);
         void Update(Expense expense);
-        void Remove(Expense expense);
+        void Remove(int expenseId);
         bool DoesExpenseAlreadyExists(Expense expense);
+        IEnumerable<Expense> Classifier(IEnumerable<string[]> expenses);
         ExpenseSummaryDTO GetExpenseSummaryFromExpenses(IEnumerable<Expense> expenses);
     }
 
@@ -26,27 +29,27 @@ namespace ExpenseManager.Business.BusinessLogic
 
         public void Add(Expense expense)
         {
-            ExpenseDataService.Add(expense);
-            ExpenseDataService.SaveChanges();
+            this.ExpenseDataService.Add(expense);
+            this.ExpenseDataService.SaveChanges();            
         }
 
         public void AddRange(IEnumerable<Expense> expenses)
         {
-
             this.ExpenseDataService.AddRange(expenses);
             this.ExpenseDataService.SaveChanges();
         }
 
         public void Update(Expense model)
         {
-            var targetExpense = ExpenseDataService.GetExpenseById(model.Id);
+            var targetExpense = this.ExpenseDataService.GetExpenseById(model.Id);
             MapForEdit(targetExpense, model);
-            ExpenseDataService.SaveChanges();
+            this.ExpenseDataService.SaveChanges();
         }
 
-        public void Remove(Expense expense)
+        public void Remove(int expenseId)
         {
-            ExpenseDataService.Remove(expense);
+            var expense = this.ExpenseDataService.GetExpenseById(expenseId);
+            this.ExpenseDataService.Remove(expense);
         }
 
         public bool DoesExpenseAlreadyExists(Expense expense)
@@ -57,7 +60,7 @@ namespace ExpenseManager.Business.BusinessLogic
         public IEnumerable<Expense> Classifier(IEnumerable<string[]> expenses)
         {
             var result = new List<Expense>();
-            var trainingSets = TrainingSetDataService.GetAllTrainingSets().ToList();
+            var trainingSets = this.TrainingSetDataService.GetAllTrainingSets().ToList();
             foreach (var entry in expenses)
             {
                 var date = String.Concat(entry[0].Trim(), " 00:00:00:AM");
@@ -76,19 +79,19 @@ namespace ExpenseManager.Business.BusinessLogic
                 var trainingSet = (trainingSets.Any()) ? trainingSets.FirstOrDefault(x => _function(x, expense)) : null;
 
                 expense.CategoryId = trainingSet == null ? 0 : trainingSet.CategoryId;
-                expense.TierId = _tierFinder(expense.CategoryId);
+                expense.TierId = this.tierFinder(expense.CategoryId);
                 result.Add(expense);
             }
             return result;
         }
 
-        private static void MapForEdit(Expense target, Expense model)
+        private void MapForEdit(Expense target, Expense model)
         {
             target.Value = model.Value;
             target.Name = model.Name;
             target.Description = model.Description;
             target.CategoryId = model.CategoryId;
-            target.TierId = model.TierId;
+            target.TierId = tierFinder(model.CategoryId);
         }
 
         private readonly Func<TrainingSet, Expense, bool> _function = (x, y) =>
@@ -97,13 +100,13 @@ namespace ExpenseManager.Business.BusinessLogic
             return descriptionWords.Any(word => x.Keywords.Contains(word) == true);
         };
 
-        private readonly Func<int, int> _tierFinder = (x) =>
+        private readonly Func<int, int> tierFinder = (x) =>
         {
-            if (x > 0 && x < 14)
+            if (x >= (int)Categories.Gym && x < (int)Categories.Groceries)
             {
                 return (int) Tiers.MonthToMonth;
             }
-            if (x == 14 || x == 15)
+            if (x == (int)Categories.Groceries || x == (int)Categories.FastFood)
             {
                 return (int) Tiers.Food;
             }    

@@ -3,12 +3,13 @@
     angular.module('em')
         .factory('expenseManagerDataService', expenseManagerDataService);
 
-    expenseManagerDataService.$inject = ['dataServiceHelper', 'expenseManagerUrls']
+    expenseManagerDataService.$inject = ['dataServiceHelper', 'expenseManagerUrls'];
 
     function expenseManagerDataService(dataServiceHelper, expenseManagerUrls) {
         var service = {
             getCurrentMonthExpenses: getCurrentMonthExpenses,
-            getCurrentMonthSummary: getCurrentMonthSummary
+            getCurrentMonthSummary: getCurrentMonthSummary,
+            updateExpense: updateExpense
         };
 
         return service;
@@ -19,6 +20,10 @@
 
         function getCurrentMonthSummary() {
             return dataServiceHelper.get(expenseManagerUrls.getCurrentMonthSummary);
+        }
+
+        function updateExpense(expense) {
+            return dataServiceHelper.postWithParameters(expenseManagerUrls.updateExpense, expense);
         }
     }
     
