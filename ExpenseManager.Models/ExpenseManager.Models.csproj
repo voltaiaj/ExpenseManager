@@ -51,6 +51,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="ExpenseManagerDbContext.cs" />
     <Compile Include="ExpenseSummaryDTO.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="TestDoubles\FakeDbSet.cs" />
     <Compile Include="TestDoubles\FakeExpenseManagerContext.cs" />
     <Compile Include="Tier.cs" />
@@ -59,8 +60,12 @@
     <Compile Include="TrainingSet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
