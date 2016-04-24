@@ -58,7 +58,7 @@ namespace ExpenseManager.Business.Tests
         [TestMethod]
         public void Remove()
         {
-            _expenseBusinessLogic.Remove(new Expense());
+            _expenseBusinessLogic.Remove(1);
         }
 
         [TestMethod]
