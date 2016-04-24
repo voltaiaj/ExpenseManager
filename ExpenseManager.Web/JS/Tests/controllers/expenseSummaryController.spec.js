@@ -18,7 +18,7 @@
         });
 
         actual = $controller('expenseSummaryController');
-        $httpBackend.expect('GET', 'api/Expense/GetCurrentMonthExpenses').respond(200, {});
+        //$httpBackend.expect('GET', 'api/Expense/GetCurrentMonthExpenses').respond(200, {});
         $httpBackend.expect('GET', 'api/Expense/GetCurrentMonthSummary').respond(200, {});
         $httpBackend.expect('GET', '/app/home/homeIndex.html').respond(200, {});
 
